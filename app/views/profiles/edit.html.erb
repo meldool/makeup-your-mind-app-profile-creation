@@ -1,0 +1,25 @@
+<% header "Edit Profile" %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <%= form_for @profile do |f| %>  <!-- , url: {action: "put"} do |f| %> -->
+
+      <%= f.label :full_name %>
+      <%= f.text_field :full_name %>
+
+      <%= f.label :contact_number %>
+      <%= f.text_field :contact_number %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+
+      <%= f.label :makeup_type %>
+      <%= f.text_field :makeup_type %>
+
+      <%= f.label :bio %>
+      <%= f.text_field :bio %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

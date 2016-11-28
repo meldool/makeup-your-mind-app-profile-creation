@@ -1,0 +1,36 @@
+<%= current_user.name %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Avatar</strong>
+  <%= image_tag @profile.image_url.to_s alt="Smiley face" %>
+</p>
+
+<p>
+  <strong>Full Name:</strong>
+  <%= @profile.full_name %>
+</p>
+
+<p>
+  <strong>Contact Number:</strong>
+  <%= @profile.contact_number %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @profile.location %>
+</p>
+
+<p>
+  <strong>Makeup Type:</strong>
+  <%= @profile.makeup_type %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @profile.bio %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
+

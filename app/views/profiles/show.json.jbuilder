@@ -1,0 +1,1 @@
+json.extract! @profile, :id, :name, :bio, :born, :created_at, :updated_at

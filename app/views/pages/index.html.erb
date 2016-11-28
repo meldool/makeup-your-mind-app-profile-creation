@@ -1,0 +1,21 @@
+<!-- Source: "Devise Authentication in Depth" - https://www.sitepoint.com/devise-authentication-in-depth/
+      This is the view and content for 'top_content' -->
+ 
+<% content_for :top_content do %>
+
+  <div class="container">
+    <h2>Welcome to</h2>
+    <div class = 'titleLogo' >Makeup Your Mind</div>
+    <div class = 'titleLogo' >
+      <%= link_to 'Makeup Your Mind', new_user_registration_path, class: 'btn-link' %>
+    </div>
+      <p>As of December 2016, Makeup Your Mind has launched its' brand new online resource for Freelance Makeup artists who wish to advertise themselves. It gives makeup artists in all areas the opportunity to showcase their amazing portfolios to prospective customers as well as providing a Home page where they can be contacted. This can be done by becoming a Member on MUYM.
+
+        Customers alike can search and view a list of Makeup artists in their area or all around Ireland expanding their world of choice.</p>
+
+
+<!-- # Ransack
+# Source: http://stackoverflow.com/questions/10523579/ransack-search-form-in-header-partial-no-ransacksearch-object-was-provided-to -->
+
+    </div>
+<% end %>
