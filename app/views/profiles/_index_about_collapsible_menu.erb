@@ -1,0 +1,44 @@
+<!-- Source: http://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp -->
+
+<!-- Description: This partial displays a link that when clicked generates a
+      hidden search field and button to generate a profile search. -->
+<head>
+  <!-- Need these links to enable the collapsible feature. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+    
+  <div id="titleLogo">
+    <button type="button" class="btn btn-lg btn-link collapsed" data-toggle="collapse" data-target="#demo">Search for Makeup Artists in you area Now</button>
+  </div>
+        
+  <div id="demo" class="collapse collapsibleText">
+    <%= search_form_for @search do |f| %>
+      <div class="large-8 small-9 columns">
+        <%= f.text_field :location_cont, class: "form-control", placeholder: "Search by County", autofocus: true, autocomplete: true %>
+      </div>
+      <div>
+        <p align = "center">
+        <br><br>
+        <%= f.submit 'Search', class: "button btn btn-default btn-lg", onclick: "foo(event)" %>
+        </p>
+      </div>
+  <table>
+    <tbody>
+      <tr>
+        <%= @profiles.each do |profile| %>
+          <td><% profile.full_name %></td>
+          <td><%= link_to 'View', profile %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+
+<script type="text/javascript">
+  window.foo = function(e) {
+    e.stopPropagation();
+  }
+</script>

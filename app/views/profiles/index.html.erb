@@ -1,3 +1,17 @@
-<h1>Profiles#index</h1>
+<!-- Source: "Devise Authentication in Depth" - https://www.sitepoint.com/devise-authentication-in-depth/
+    This is the view and content for 'top_content' -->
 
-<%= render "profile_search_box" %>
+<% content_for :top_content do %>
+  <div id="indexBgImage">
+    <div id="logo">
+      <img src="/assets/LargeLogo2.png" alt="Logo">      
+    </div>
+
+    <div class="container">
+        
+      <%= render "index_about_collapsible_menu" %>
+      <br><br>
+      <%= render "index_search_box" %>
+    </div>
+  </div>
+<% end %>

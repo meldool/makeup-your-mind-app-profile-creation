@@ -1,0 +1,8 @@
+<!-- Source: http://stackoverflow.com/questions/7086583/creating-a-users-show-page-using-devise -->
+
+<% @users.each do |user| %>
+  <%= link_to user.name, user %>
+  <%= user.email %>
+<% end %>
+
+<%= link_to "show_index_of_users", users_path %>

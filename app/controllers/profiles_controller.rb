@@ -60,12 +60,10 @@ class ProfilesController < ApplicationController
       @profile = Profile.find(params[:id])
       #@profile = Profile.find(profile_params)
     end
-      
-    private
     
-      def profile_params
-        params[:profile][:user_id] = current_user.id # Newly added line
-        params.require(:profile).permit(:full_name, :contact_number, :location, :makeup_type, :bio, :user_id, :image)
-      end
+    def profile_params
+      params[:profile][:user_id] = current_user.id
+      params.require(:profile).permit(:full_name, :contact_number, :location, :makeup_type, :bio, :user_id, :image)
+    end
       
 end

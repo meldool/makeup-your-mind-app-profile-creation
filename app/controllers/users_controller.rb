@@ -1,6 +1,5 @@
 # Reference: http://www.korenlc.com/rails-tutorial-authentication-with-devise/
 
-# def index method
 # Source: https://www.youtube.com/watch?v=Vht9iCw8ApE. Author: Railscasts Reloaded.
 
 class UsersController < ApplicationController
@@ -8,9 +7,11 @@ class UsersController < ApplicationController
   # This will find the user by ID in the database and display/show it.
   def show
     @user = User.find(params[:id])
-    debugger
   end
   
+  def index
+   @users = User.all
+  end
  # def create
    # @user = User.new(user_params)
     #if @user.save

@@ -4,16 +4,10 @@ class RegistrationsController < Devise::RegistrationsController
 
 # Reference: https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-on-successful-sign-up-(registration)
   protected
-# This allows a newly registered user to be directed to the Profile Creation page
+  # After a user signs up, they are diverted to a page to create their profile (new.html.erb)
     def after_sign_up_path_for(resource)
       new_profile_path(resource)
-      #render '/profile/new/'
     end
-  
-  # def after_sign_up_path_for(resource)
-  # '/profiles/new'
-  # end
-  
   
   # GET /resource/sign_up
   # def new

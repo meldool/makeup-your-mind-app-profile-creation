@@ -1,12 +1,12 @@
-class SessionsController < Devise::SessionsController
+class Registrations::SessionsController < Devise::SessionsController
 # before_action :configure_sign_in_params, only: [:create]
 
-  protected
-    def after_sign_in_path_for(resource)
-      profile_path(resource)
-      debugger
-      #render '/profile/:id/'
-    end
+  #protected
+   # def after_sign_in_path_for(resource)
+    #  profile_path(resource)
+    #end
+    
+    
   # GET /resource/sign_in
   # def new
   #   super

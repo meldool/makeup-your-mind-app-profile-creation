@@ -30,41 +30,133 @@
   @extend .alert-info;
 }
 
+/** Source for Reset Stylesheets - http://meyerweb.com/eric/tools/css/reset/ **/
+
+/**
+************************* Reset Stylesheets ***************************
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+***/
+/* HTML5 display-role reset for older browsers */
+/***
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+***/
 
 /*********Added body class & moved Oswald font to it so we don't have to change it for each class - AI*********/
 
-* {
-margin:0;
-padding:0;
-}
 
-body{
-    // background-image: url("mother.jpg");
-    // background-attachment: fixed;
-    //background-position: center center; 
-    // background-repeat: no-repeat;
-    font-family: Helvetica, Arial, sans-serif;
-    width: auto;
-    background: white;
-}
 
-/*** The index.html.erb page settings ***/
+body {
+  background: black;
+  //position: relative;
+  //margin:0 auto;
+  //padding-top: 10px;
+  
+  //left: 30%;
+  //top:50px;
+  //width: auto;
+  //height: 34px;
+  //max-width: 50%;
+  //color: white
+  //background-image: url("/assets/Background.jpg");
+  //background-attachment: auto;
+  //background-position: center center; 
+  //background-repeat: no-repeat;
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
+  //background-size: cover;
+
+  //font-family: Oswald; //Helvetica, Arial, sans-serif;
+  //font-size: small;
+
+  //align-items: center;
+  //justify-content: center;
+
+  //display: flex;
+  //border: none;
+  //border-radius: 10px;
+  //border-style: solid;
+  //outline: none;
+  //box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  
+  //cursor: pointer;
+}
+/********************************* Home Page *********************************/
+/********************** The Profiles 'index.html.erb' page *******************/
+
+/** Source: https://css-tricks.com/perfect-full-page-background-image/
+      Awesome, Easy, Progressive CSS3 Way **/
+#indexBgImage {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: url("/assets/Background.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#logo {
+  position: relative;
+  width: 653px;//873px;
+  height: 279px;//380px;
+  //float:left;
+  display:block;
+  color:000000;
+  padding: 30px 150px;
+  font-size: 150%;
+}
 
 .container {
-  background: white;
-}
-.titleLogo{
-  float:center;
-  display:block;
-  color: black;
-  text-align: center;
-  text-decoration:none;
-  padding: 15px 30px;
-  font-size: 36px;
+  background-color: black;
+  height: 100%;
+  //margin: 0%;
+  position: relative;
 }
 
 h2 {
-  color: black;
+  color: white;
   text-align: center;
 	font-size: 22px;
 	font-style: normal;
@@ -73,8 +165,25 @@ h2 {
 	line-height: 26.4px;
 }
 
+#titleLogo {
+  float:center;
+  display:block;
+  color: white;
+  text-align: center;
+  text-decoration:none;
+  padding: 15px 30px;
+  font-size: 36px;
+}
+
+.collapsibleText {
+  color: white;
+  line-height: 200%;
+  font-weight: 300;
+  font-size: 1em; 
+}
+
 p {
-  color: black;
+  //color: white;
   line-height: 200%;
   font-weight: 300;
   font-size: 1em;
@@ -82,614 +191,10 @@ p {
 .button {
     // background-color: #4CAF50; /* Green */
     // border: none;
-    color: black;
+    //color: black;
     // padding: 15px 32px;
     text-align: center;
     // text-decoration: none;
     // display: inline-block;
     // font-size: 16px;
-}
-
-
-#menubar {
-  background-color: white;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  list-style-type: none;
-}
-
-#menubar li{
-    float:right
-}
-
-#menubar li a{
-    display:block;
-    color:black;
-    text-align: center;
-    padding: 25px 35px;
-    text-decoration:none;
-}
-
-#menubar li a:hover {
-    background-color: #008066;
-    color:white;
-}
-
-#search li{
-    float:left;
-    color:black;
-}
-  
-/*********CSS for Search Form - AI*********/
-
-
-h1 {
-    font-size: 500%;
-}
-
-.heading{
-    display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 150px;
-  letter-spacing: 2px;
-}
-
-.button_container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 10px;
-}
-
-.searches_container{
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding-top: 5px;
-  margin-left: 400px;
-}
-
-.searches_container select{
-    font-family: Oswald;
-    font-size: small;
-    color: grey;
-    height: 34px;
-}
-
-.searches_container input{
-    font-family: Oswald;
-    font-size: small;
-    color: grey;
-    height: 28px;
-}
-
-td{
-    vertical-align: top;
-}
-
-#search_button{
-    font-family: Oswald;
-    color: white;
-    margin: 0px 0px 20px 0px;
-    border: 2px solid white;
-    background: #00b38f;
-    font-size: large;
-    width: 200px;
-    vertical-align: bottom;
-    height:34px;
-}
-
-#search_button:hover {
-  color: white !important;
-  background: #008066;
-}
-
-#resultcolor{
-    color:white;
-}
-
-/*****************LOGIN PAGE *************************/
-
-#login_container {
-  background: white;
-  width: 40%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
-  font-family: Oswald;
-  position: relative;
-  color: #333;
-  border-radius: 10px;
-  left: 30%;
-  top:50px;
-}
-
-#login_container{
-  padding-top: 50;
-}
-
-#login_text {
-  background: #008066;
-  padding: 30px 20px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  border-radius: 10px 10px 0 0;
-  text-align: center;
-}
-
-.labels {
-  margin-left: 20px;
-  display: inline-block;
-  margin-top: 30px;
-  margin-bottom: 5px;
-  position: relative;
-  font-size: 110%;
-
-}
-.inputs {
-  display: block;
-  width: 78%;
-  margin-left: 20px;
-  padding: 5px 20px;
-  font-size: 1em;
-  border-radius: 3px;
-  outline: none;
-  border: 1px solid #ccc;
-}
-
-#login_button {
-  position: relative;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  left:50%;
-  transform: translate(-50%, 0);
-  font-family: inherit;
-  color: white;
-  outline: none;
-  border: none;
-  padding: 15px 15px;
-  font-size: 1.3em;
-  font-weight: 400;
-  border-radius: 3px;
-  box-shadow: 0px 0px 30px rgba(51, 51, 51, 0.4);
-  cursor: pointer;
-}
-#login_button:hover {
-  background: #008066;
-}
-
-.submit {
-  display: block;
-  width: 80%;
-  margin-left: 50px;
-  padding: 5px 20px;
-  font-size: 1em;
-  border-radius: 3px;
-  outline: none;
-  border: 1px solid #ccc;  
-}
-
-#login_register{
-  position: relative;
-  left:170px;
-}
-
-.signup{
-  text-decoration: none;
-}
-
-
-/*****************SIGN UP PAGE *************************/
-
-#signupContainer {
-  background: white;
-  width: 40%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
-  font-family: Oswald;
-  position: relative;
-  color: #333;
-  border-radius: 10px;
-  left: 30%;
-  top:20px;
-}
-
-#signupText{
-  background: #008066;
-  padding: 30px 20px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  border-radius: 10px 10px 0 0;
-  text-align: center;
-}
-
-.spanpass{
-  left:20px;
-  color:#cacaca;
-}
-  
-
-
-/*********HomePage - Hiding Band/Musician UserType Radio Buttons*********/
-
-.hidden{
-    display:none;
-}
-
-
-/*********HomePage - Main Buttons*********/
-#hpbuttons1,  #hpbuttons2 {
-    font-family: Oswald;
-    color: white;
-    margin: 0px 0px 20px 0px;
-    border: 2px solid white;
-    background: grey;
-    font-size: large;
-    width: 400px;
-    vertical-align: bottom;
-    height:40px;
-}
-
-#hpbuttons1:hover {
-  color: white !important;
-  background: #008066;
-}
-
-#hpbuttons2:hover {
-  color: white !important;
-  background: #008066;
-} 
-
-#hpbuttons2:active {
-  color: white !important;
-  background: #008066;
-} 
-
-/*********Search Results page*********/
-
-h3{
-  font-size: 150%;
-}
-
-#search_p {
-  margin: 20px 5px 5px 5px;
-  font-size: 150%;
-}
-
-#result_table {
-  margin-left: 300px;
-  margin-right: 300px;
-  background-color: rgba(136, 136, 136, 0.4); 
-  box-shadow: 5px 5px 2px #888888;
-}
-
-table{
-    padding: 10px 10px 10px 10px;
-}
-
-#result_spacer{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-a:link{
-  color: #008066;
-  text-decoration: none;
-}
-a:visited {
-  color: grey;
-}
-a:hover {
-  color:  white;
-}
-
-
-/**************************** Profile Page ************************************/
-
-#pPanel1 {
-  position: absolute;
-  top: 74px;
-  left: 200px;
-  width: 70%;
-  height: 10%;
-  margin:0px;
-  min-width: 300px;
-  min-height: 100px;
-  z-index: 9;
-  background-color: white;
-	padding:180px 5px;
-}
-
-#picPanel {
-  position: absolute;
-  background: #008066;
-  color:#fff;
-	/**text-align:center;**/
-	box-shadow:0px 0px 5px 5px #C9C9C9;
-	min-width: 300px;
-  width: 300px;
-  min-height:300px;
-	height:300px;
-	margin: 10px;
-	padding: 10px;
-	top: 120px;
-	left: 250px;
-	z-index:10;
-	border-radius: 10px 10px 10px 10px;
-}
-
-#pPanel2 {
-  position: absolute;
-  top: 500px;
-  width: 100%;
-  height: 100%;
-  margin:0px;
-  left:1px;
-  right:1px;
-  min-width: 200px;
-  min-height: 100px;
-  z-index: 9;
-  background:rgba(255,255,255,0.5);
-  
-}
-
-#userInfo {
-  position: absolute;
-  left:420px;
-  top:190px;
-  list-style: none;
-  font-family:Oswald;
-}
-
-#userName {
-  position: absolute;
-  font-size: 500%;
-  left:420px;
-  top:60px;
-  list-style: none;
-  color:black;
-  font-family: Oswald;
-  
-}
-
-#userbio{
-  position: absolute;
-  top:30px;
-  left:30px;
-  list-style: none;
-  font-family:Oswald;
-}
-
-
-#pro_user{
-  margin: 10px 0px 0px 760px;
-  color:white;
-  font-family: Oswald;
-  font-size: 150%;
-  text-shadow:1px 1px 0 #008066,
-  -1px -1px 0 #008066,
-  1px -1px 0 #008066,
-  -1px 1px 0 #008066,
-  0px 1px 0 #008066,
-  1px 0px 0 #008066,
-  0px -1px 0 #008066,
-  -1px 0px 0 #008066,
-  4px 4px 3px #000;
-}
-
-/*****************Upgrade Form*************************/
-#upgradeContainer {
-  background: white;
-  width: 40%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
-  font-family: Oswald;
-  position: relative;
-  color: #333;
-  border-radius: 10px;
-  left: 30%;
-  top:20px;
-}
-
-#upgradeText{
-  background: #008066;
-  padding: 10px 100px 10px 100px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  border-radius: 10px 10px 0 0;
-  text-align: center;
-}
-
-#upgrade_button{
-    font-family: Oswald;
-    color: white;
-    margin: 0px 0px 20px 0px;
-    border: 2px solid grey;
-    background: #00b38f;
-    font-size: large;
-    width: 200px;
-    vertical-align: bottom;
-    height:34px;
-}
-
-#upgrade_button:hover {
-  color: white !important;
-  background: #008066;
-}
-
-#upgradeFields {
-  padding: 10px 100px 10px 170px;
-}
-
-/**************************** Modify Profile ************************************/
-
-#modifyProfileContainer {
-  background: white;
-  width: 45%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
-  font-family: Oswald;
-  position: relative;
-  color: #333;
-  border-radius: 10px;
-  left: 26%;
-  top:50px;
-  border-style: solid;
-  border-width: 10px;
-  border-color: #008066;
-}
-
-#modifyProfileContainer{
-  padding-top: 50;
-}
-
-#modifyProfileContainer select{
-    font-family: Oswald;
-    font-size: small;
-    color: grey;
-    height: 34px;
-}
-
-#login_buttons {
-  position: relative;
-  margin-top: 30px;
-  left:50%;
-  transform: translate(-50%, 0);
-  font-family: inherit;
-  color: white;
-  outline: none;
-  border: none;
-  padding: 15px 15px;
-  font-size: 1.3em;
-  font-weight: 400;
-  border-radius: 3px;
-  box-shadow: 0px 0px 30px rgba(51, 51, 51, 0.4);
-  cursor: pointer;
-}
-#login_buttons:hover {
-  background: #008066;
-}
-
-.submits {
-  display: block;
-  width: 80%;
-  margin-left: 50px;
-  padding: 5px 20px;
-  font-size: 1em;
-  border-radius: 3px;
-  outline: none;
-  border: 1px solid #ccc;  
-}
-
-#profileHeading{
-  background: #008066;
-  padding: 30px 20px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  text-align: center;
-}
-
-
-.boxSize {
-    width: 510px;
-    height: 200px;
-    padding: 1px;
-}
-
-.boxSize1 {
-    width: 510px;
-    height: 20px;
-    padding: 1px;
-}
-
-
-
-/*****************Edit Form*************************/
-#editContainer {
-  background: white;
-  width: 40%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
-  font-family: Oswald;
-  position: relative;
-  color: #333;
-  border-radius: 10px;
-  left: 30%;
-  top:20px;
-}
-
-#editText{
-  background: #008066;
-  padding: 10px 100px 10px 100px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  border-radius: 10px 10px 0 0;
-  text-align: center;
-}
-
-#edit_button{
-    font-family: Oswald;
-    color: white;
-    margin: 10px 0px 20px 0px;
-    border: 2px solid grey;
-    background: #00b38f;
-    font-size: large;
-    width: 200px;
-    vertical-align: bottom;
-    height:34px;
-}
-
-#edit_button:hover {
-  color: white !important;
-  background: #008066;
-}
-
-#editFields {
-  padding: 10px 100px 10px 170px;
-}
-
-.edit_helpers {
-  font-size: smaller
-}
-
-
-
-/*****************Cancel Account Button*************************/
-#cancelContainer {
-  background: white;
-  width: 40%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
-  font-family: Oswald;
-  position: relative;
-  color: #333;
-  border-radius: 10px;
-  left: 30%;
-  top:20px;
-}
-
-#cancel_button{
-    font-family: Oswald;
-    color: white;
-    margin: 0px 0px 20px 0px;
-    border: 2px solid grey;
-    background: black;
-    font-size: large;
-    width: 200px;
-    vertical-align: bottom;
-    height:34px;
-}
-
-#cancel_button:hover {
-  color: white !important;
-  background: #008066;
-}
-
-#cancel_link:hover {
-  color: white !important;
-  background: #008066;
-}
-
-#cancelFields {
-  padding: 10px 100px 10px 170px;
 }
