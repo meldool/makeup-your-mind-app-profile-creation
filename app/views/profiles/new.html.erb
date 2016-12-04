@@ -6,14 +6,15 @@
 <h1>Profile Creation</h1>
 <% provide(:title, 'Sign up') %>
 
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-  
+
+<div id="edit_form_panel">
+
+<% header "Create Profile" %>
   <!-- Reference: http://guides.rubyonrails.org/form_helpers.html => 2.2 Binding a Form to an Object -->
   <!-- Creates a form for the object @profile. -->
 
   <!-- Multipart allows the uploading of attachments -->
-      <%= form_for @profile, :html => {:multipart => true} do |f| %>
+    <%= form_for @profile, :html => {:multipart => true} do |f| %>
       
         <div class="form-group">
           <%= f.label :full_names %>
@@ -24,14 +25,17 @@
           <%= f.label :contact_number %>
           <%= f.text_field :contact_number %>
         </div>
-          
-        <div class="form-group">
-          <%= f.label :location %>
-          <%= f.text_field :location %>
-        </div>
-          
-        <div class="form-group">
-          <%= f.label :makeup_type %>
+
+  <div class="form-group">
+    <%= f.label :location %>
+      <%= f.text_field :location %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :makeup_type %>
+
+
+
           <%= f.text_field :makeup_type %>
         </div>
           
@@ -43,7 +47,7 @@
         <div class="form-group">
           <%= f.file_field :image %>
         </div>
-        <%= f.submit "Create my account", class: "btn btn-primary" %>
+        <%= f.submit "Activate my Profile", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

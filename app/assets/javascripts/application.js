@@ -15,3 +15,23 @@
 //= require jquery_ujs
 //= require bootstrap/dropdown
 //= require turbolinks
+
+  function locationExists()
+  {
+    var field_value = document.forms["form-group"]["location"].value;
+    if (field_value == "")
+    {
+        alert("Please select a location.");
+        return false;
+    }
+  }
+  
+  function isFullnameValid()
+  {
+    var field_value = document.forms["form-group"]["location"].value;
+    if (field_value == "")
+    {
+        alert("Please select a location.");
+        return false;
+    }
+  }

@@ -1,36 +1,46 @@
-<%= current_user.name %>
 <p id="notice"><%= notice %></p>
+<%= @user %>
+  <p class="pFields jumbotron text-center">Personal Details</p>
+  <img src="/assets/miniLogo.png" alt="miniLogo" />
+<div id="showPanel1" %>
+  <p>
+    <%= image_tag @profile.image_url.to_s, alt: "Avatar", id: "avatarImg" %>
+  </p>
 
-<p>
-  <strong>Avatar</strong>
-  <%= image_tag @profile.image_url.to_s %>
-</p>
+  <div class="row">
+      <p class="pFields">
+        <strong>Full Name:</strong>
+        <%= @profile.full_name %>
+      </p>
+  </div>
+  <div class="row">
+      <p class="pFields">
+        <strong>Contact Number:</strong>
+        <%= @profile.contact_number %>
+      </p><br>
+  </div>
+  <div class="row">
+      <p class="pFields">
+        <strong>Location:</strong>
+        <%= @profile.location %>
+      </p><br>
+  </div>
+  <div class="row">
+      <p class="pFields">
+        <strong>Makeup Type:</strong>
+        <%= @profile.makeup_type %>
+      </p><br>
+  </div>
+</div>
 
-<p>
-  <strong>Full Name:</strong>
-  <%= @profile.full_name %>
-</p>
+<div id="showPanel2" %>
+  <p class="pFields">
+    <strong>Bio:</strong>
+    <%= @profile.bio %>
+  </p>
+</div>
 
-<p>
-  <strong>Contact Number:</strong>
-  <%= @profile.contact_number %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @profile.location %>
-</p>
-
-<p>
-  <strong>Makeup Type:</strong>
-  <%= @profile.makeup_type %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
-
+<div id="showLinks">
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <%= link_to 'Back', profiles_path %>
+</div>

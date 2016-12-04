@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html style="background-color:#000000">
+<html>
   <head>
     <title>MakeupApp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,7 +13,7 @@
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
-          <%= link_to 'MUYM', root_path, class: 'navbar-brand' %>
+          <%= link_to 'MYM', root_path, class: 'navbar-brand' %>
         </div>
         <div id="navbar">
           <ul class="nav navbar-nav">
@@ -55,7 +56,6 @@
 
 <!-- Source: "Devise Authentication in Depth" - https://www.sitepoint.com/devise-authentication-in-depth/
       Using flash functionality so Devise can display various messages to the screen. -->
-   
    <div class="container">
       <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>">
@@ -65,9 +65,8 @@
     </div>
     
 <!-- yield renders the content stored in both top_content and header. -->
-    <%= yield :top_content %>
+
     <div class="container">
-      <h1><%= yield :header %></h1>
       <%= yield %>
     </div>
   </body>

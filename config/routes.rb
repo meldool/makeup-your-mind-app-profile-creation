@@ -6,5 +6,11 @@ Rails.application.routes.draw do
   resources :profiles
   resources :pages
   # Routes to the 'pages' controller and then to the 'index' action. -->
+
   root to: 'profiles#index'
+  
+    get '/profiles/show' => 'profiles#show'
+    get '/profiles/new' => 'profiles#new'
+    get '/profiles/edit' => 'profiles#edit'
+    get '/profiles/index' => 'profiles#index'
 end
