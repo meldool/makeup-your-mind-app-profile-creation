@@ -1,11 +1,13 @@
 <!-- Source: "Devise Authentication in Depth" - https://www.sitepoint.com/devise-authentication-in-depth/ -->
 
   <!-- ACCOUNT SETTINGS Page to Edit members Profile Name, Email and/or Passowrd  -->
-  
+<div id= "nice-form">
 <div class="titleLogo"><% header "Edit #{resource_name.to_s.humanize} Account" %></div>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
+  <div id="form-titles">
+  <h1>Edit Details</h1>
+  </div>
   <div class="form-group">
     <%= f.label :name%>
     <%= f.text_field :name, class: 'form-control' %>
@@ -46,3 +48,4 @@
 </p>
 
 <%= link_to "Back", :back, class: 'btn btn-default btn-sm' %>
+</div>

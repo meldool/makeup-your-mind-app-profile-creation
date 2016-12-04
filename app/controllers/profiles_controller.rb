@@ -1,13 +1,9 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:edit, :update, :destroy]
 
-  # Ransack Searh - passes in parameters entered by user into Profile object
-  # which is assigned to @search instance varialble.
+  # Ransack Searh - passes in parameters entered by user into Profile object which is assigned to @search instance varialble.
   def index
     @search = Profile.search(params[:q])
-  
-  # Source: https://github.com/activerecord-hackery/ransack/wiki/Sorting-in-the-Controller
-    # "Sorting on a Controller". Author: Jon Atack
     @search.sorts = 'full_name asc' if @search.sorts.empty?
     @profiles = @search.result
   end
@@ -50,24 +46,16 @@ class ProfilesController < ApplicationController
       end
     end
   end
-  
-  def destroy
-    @profile.destroy
-    
-    respond_to do |format|
-      format.html { redirect_to profile_url, notice: 'Profile was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+
   
   private
 
     def set_profile
       @profile = Profile.find(params[:id])
-      #@profile = Profile.find(profile_params)
     end
     
     def profile_params
+    # By specifying the profiles user_id together with the profile, it is creating a link with the actual user.
       params[:profile][:user_id] = current_user.id
       params.require(:profile).permit(:full_name, :contact_number, :location, :makeup_type, :bio, :user_id, :image)
     end

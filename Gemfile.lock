@@ -195,6 +195,7 @@ DEPENDENCIES
   carrierwave (>= 1.0.0.rc, < 2.0)
   coffee-rails (= 4.2.1)
   devise (= 4.2.0)
+  execjs (~> 2.6)
   jbuilder (= 2.4.1)
   jquery-rails (= 4.1.1)
   jquery-turbolinks

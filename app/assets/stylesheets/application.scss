@@ -19,6 +19,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap/theme";
+@import url('https://fonts.googleapis.com/css?family=Bevan');
 
 // The @extend method is used to style Devise-specific flash messages.
 .alert-alert {
@@ -49,17 +50,28 @@ body {
 
 /** Source: https://css-tricks.com/perfect-full-page-background-image/
       Awesome, Easy, Progressive CSS3 Way **/
-      
+
+.container {
+  height: 100%;
+  position: relative;
+}
+
 #indexBgImg {
   width: 100%;
   height: 100%;
   position: fixed;
-  margin: 0 0;
-  background: url("/assets/Background.jpg") no-repeat center center fixed; 
+  background: url("/assets/Background.jpg") no-repeat; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+#index_form_panel {
+  width: 81%;
+  position: relative;
+  margin: 0px 0px 0px 140px;
+  border-style: inset;
 }
 
 #logo {
@@ -71,14 +83,27 @@ body {
   font-size: 150%;
 }
 
-.container {
-  background-color: black;
-  height: 100%;
-  position: relative;
+.searchHeading {
+  text-align: center;
 }
 
-#mainPage {
-  margin :auto;
+.searchBox {
+  position: relative;
+  max-width: 60%;
+  margin: auto;
+}
+
+.button {
+  position: relative;
+  display: block;
+  font-size: 20px;
+  padding: 3px 15px;
+  border: 3px groove;
+  margin: auto;
+}
+
+.button:hover {
+    color: #eb6969;
 }
 
 h3 {
@@ -89,11 +114,6 @@ h3 {
 	line-height: 26.4px;
 }
 
-.searchItems {
-  max-width: 80%;
-  text-align: center;
-}
-
 p {
   color: white;
   line-height: 200%;
@@ -101,15 +121,34 @@ p {
   font-size: 1em;
 }
 
-
 /********************************* Search Page* ********************************/
        /******************** /profiles/index.html.erb *******************/
+       
 table, td {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 5px;
     text-align: left;
 }
+
+/********************************** New Page* *********************************/
+       /******************** /profiles/new.html.erb *******************/
+
+#new_form_panel {
+  background: white;
+  width: 60%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  position: relative;
+  color: #333;
+  border-radius: 10px;
+  left: 20%;
+  top:20px;
+  padding: 15px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #8802FF;
+}
+
 
 /********************************* Show Page* ********************************/
        /******************** /profiles/show.html.erb *******************/
@@ -171,6 +210,7 @@ table, td {
 
 /********************************* Edit Page* ********************************/
        /******************** /profiles/edit.html.erb *******************/
+
 #edit_form_panel{
   background: white;
   width: 60%;
@@ -183,8 +223,44 @@ table, td {
   padding: 15px;
   border-style: solid;
   border-width: 10px;
+  border-color: #e6005c;
+}
+
+#button{
+  background: #8802FF;
+  width: 100%;
+  float:center;
+}
+
+
+/********************************* Login Page ********************************/
+
+#form-titles{
+  text-align:center;
+  position:relative;
+  font-size:200%;
+  font-family: 'Bevan', cursive;
+}
+
+#nice-form{
+  background: white;
+  width: 60%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  position: relative;
+  color: black;
+  border-radius: 5px;
+  left: 20%;
+  top:40px;
+  padding: 15px;
+  border-style: solid;
+  border-width: 0px;
+  border-color: #ff0066;
+  font-family: 'Bevan', cursive;
+  -webkit-box-shadow: inset 9px -12px 163px 20px rgba(48,19,48,0.57);
+  -moz-box-shadow: inset 9px -12px 163px 20px rgba(48,19,48,0.57);
+  box-shadow: inset 9px -12px 163px 20px rgba(48,19,48,0.57);
+    border-width: 10px;
   border-color: #8802FF;
-  
 }
 
 #button{

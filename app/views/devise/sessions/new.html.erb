@@ -1,14 +1,19 @@
+<div id= "nice-form">
 <% header "Log in" %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div id="form-titles">
+  <h1>Log In</h1>
   </div>
 
-  <div class="form-group">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group", class: "form-text">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, class:"form-control" %>
+  </div>
+
+  <div class="form-group", class: "form-text">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -24,3 +29,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

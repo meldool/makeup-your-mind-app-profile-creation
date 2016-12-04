@@ -8,8 +8,9 @@ gem 'coffee-rails', '4.2.1'
 gem 'jquery-rails', '4.1.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
-gem 'thor', '0.19.1'
+gem 'thor',         '0.19.1'
 
+gem 'execjs', '~> 2.6'
 # Source: "Devise Authentication in Depth" - https://www.sitepoint.com/devise-authentication-in-depth/
             # Adding 'devise', 'bootstrap' and 'jquery' gems.
 gem 'devise', '4.2.0'
